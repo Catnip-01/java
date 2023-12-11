@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity full_adder is
+    Port ( A : in BIT;
+           B : in BIT;
+           C : in BIT;
+           Sum : out BIT;
+           Carry : out BIT );
+end full_adder;
+
+architecture desc of full_adder is
+begin
+    process(A, B, C)
+        variable temp_sum, temp_carry : BIT;
+    begin
+
+        -- First XOR operation to get the sum
+        temp_sum := A XOR B;
+
+        -- Second XOR operation to combine with C
+        Sum <= temp_sum XOR C;
+
+        -- AND operation to get the carry-out
+        temp_carry := (A AND B) OR (Cin AND temp_sum);
+        Carry <= temp_carry;
+        
+    end process;
+end desc;

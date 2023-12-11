@@ -1,0 +1,26 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity half_adder is
+    Port ( A : in BIT;
+           B : in BIT;
+           Sum : out BIT;
+           Carry : out BIT );
+end half_adder;
+
+architecture desc of half_adder is
+begin
+    process(A, B)
+        variable temp_sum, temp_carry : BIT;
+    begin
+
+        -- XOR operation to get the sum
+        temp_sum := A XOR B;
+        Sum <= temp_sum;
+
+        -- AND operation to get the carry-out
+        temp_carry := A AND B;
+        Carry <= temp_carry;
+        
+    end process;
+end desc;

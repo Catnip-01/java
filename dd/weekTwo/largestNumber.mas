@@ -1,0 +1,20 @@
+input
+STORE X 
+input
+STORE Y 
+
+LOAD X
+SUB Y
+SKIPCOND 800 
+JUMP test
+
+LOAD X
+output
+HALT
+
+test, LOAD Y
+output
+HALT
+
+X, Dec 0 
+Y, Dec 0 

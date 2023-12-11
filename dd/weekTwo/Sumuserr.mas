@@ -1,0 +1,9 @@
+input     ; Take the first number as input
+STORE X   ; Store the first number in location X
+
+input     ; Take the second number as input
+ADD X     ; Add the second number to the first number (result is in the accumulator)
+output    ; Print the result
+HALT      ; Halt the program
+
+X, Dec 0  ; Initialize X to 0

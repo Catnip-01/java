@@ -1,0 +1,22 @@
+input
+STORE X  ; Store the first input in X
+input
+STORE Y  ; Store the second input in Y
+
+LOAD X
+SUB Y
+SKIPCOND 400 ; Skip the next instruction if result is negative (X is greater than Y)
+JUMP isYGreater ; If X is not greater, jump to the label isYGreater
+
+; Code for when X is greater
+LOAD X
+output
+HALT
+
+isYGreater, DEC 0 ; Label for when Y is greater
+LOAD Y
+output
+HALT
+
+X, Dec 0 ; Initialize X to 0
+Y, Dec 0 ; Initialize Y to 0

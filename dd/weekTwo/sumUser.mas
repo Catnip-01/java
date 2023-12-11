@@ -1,0 +1,12 @@
+input
+STORE X
+input
+STORE Y
+
+LOAD X
+ADD Y
+output
+HALT
+
+X, Dec 0
+Y, Dec 0

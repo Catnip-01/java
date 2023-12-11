@@ -1,0 +1,21 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity full_adder is
+    Port ( A : in BIT;
+           B : in BIT;
+           C : in BIT;
+           Sum : out BIT;
+           Carry : out BIT );
+end full_adder;
+
+architecture desc of full_adder is
+begin
+    process(A, B, C)
+    begin
+
+        Sum <= (A XOR B) XOR Cin;
+        Carry <= (A AND B) OR (Cin AND (A XOR B));
+
+    end process;
+end desc;
